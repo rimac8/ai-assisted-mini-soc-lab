@@ -107,6 +107,32 @@ Not needed immediately.
 5. Create Ubuntu Server VM in VMware
 6. Take first snapshot after clean installation
 
+## Completed Work
+
+### Ubuntu SOC Server VM
+
+Created the first Ubuntu Server VM in VMware Workstation.
+
+VM details:
+
+- VM name: Ubuntu-SOC-Server
+- OS: Ubuntu Server 24.04.4 LTS
+- Username: socadmin
+- Hostname: ubuntu-soc-server
+- Network mode: NAT
+- SSH: Enabled
+- Internet test: Successful
+- Basic tools installed: open-vm-tools, net-tools, curl, wget, git, unzip
+
+### Snapshot Created
+
+Snapshot name:
+
+Clean Ubuntu Server - Updated + SSH Ready
+
+Purpose:
+
+This snapshot allows the lab to be safely restored before installing Wazuh or making major changes.
 ## Notes
 
 This lab is for defensive cybersecurity learning only.
