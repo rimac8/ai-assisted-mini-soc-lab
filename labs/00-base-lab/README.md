@@ -2,52 +2,115 @@
 
 ## Goal
 
-Set up the basic cybersecurity lab environment before installing SIEM, AI tools, firewalls, or detection systems.
+Set up the basic cybersecurity lab environment before installing Wazuh, detection rules, AI tools, firewalls, or SOAR automation.
 
 This lab is the foundation for the full AI-Assisted Mini SOC project.
 
-## What This Lab Will Include
+## Lab Strategy
 
-- Main lab machine setup
-- Virtual machine software setup
-- Kali Linux VM
-- Ubuntu Server VM
-- Windows VM
-- Basic networking between machines
-- Snapshots for safety
-- Notes on physical devices used later
+This project will start simple.
 
-## Planned Devices
+We will use the Razer Blade as the main lab machine and run the first lab using VMware Workstation.
 
-| Device | Role |
-|---|---|
-| Razer Blade 15 Advanced 2022 | Main VM host, coding, AI, heavy testing |
-| Lenovo Legion Y540 | Secondary lab machine, Kali/testing, packet analysis |
-| Lenovo ThinkCentre mini PC | Always-on server later |
-| ThinkPad T470s | Physical endpoint/log source later |
+Extra devices will only be added later if they teach something useful.
 
-## First Target Architecture
+Rule:
 
-Razer Blade
-- Kali Linux VM
-- Ubuntu Server VM
-- Windows VM
+Use one device unless another device adds real learning value.
 
-Later, the lab will expand into:
+## Devices for This Lab
 
-Kali / Attacker
-→ Windows or Linux endpoint
-→ Wazuh SIEM
-→ Detection rules
-→ AI SOC Assistant
-→ Playbook / Report
+| Device | Use Now? | Role |
+|---|---|---|
+| Razer Blade 15 Advanced 2022 | Yes | Main VM host |
+| Lenovo Legion Y540 | Not now | Optional later |
+| ThinkPad T470s | Later | Physical Kali or endpoint machine |
+| Mini PC | Later | Headless always-on server |
+
+## First Lab Architecture
+
+Razer Blade  
+→ VMware Workstation  
+→ Ubuntu Server VM  
+→ Windows VM  
+→ Kali Linux VM later
+
+## First Milestone
+
+The first milestone is not AI or automation yet.
+
+The first milestone is:
+
+Ubuntu Server VM  
+→ Wazuh Manager  
+→ Windows VM  
+→ Wazuh Agent  
+→ File Integrity Monitoring alert
+
+## Why We Are Starting This Way
+
+Starting with only the Razer keeps the lab clean and easy to manage.
+
+This avoids needing multiple chargers, screens, sockets, or extra networking setup before the basics are working.
+
+Once the first SIEM setup works, we can decide whether to add the ThinkPad, mini PC, or Legion.
+
+## VMware VM Plan
+
+### Ubuntu Server VM
+
+Purpose:
+
+Wazuh Manager / SOC server later.
+
+Planned settings:
+
+- 2 CPU cores
+- 4 GB RAM
+- 60 GB disk
+- NAT network first
+
+### Windows VM
+
+Purpose:
+
+Endpoint/log source for Wazuh Agent.
+
+Planned settings:
+
+- 2 CPU cores
+- 4 GB RAM
+- 60 GB disk
+- NAT network first
+
+### Kali Linux VM
+
+Purpose:
+
+Attacker/testing machine later.
+
+Not needed immediately.
 
 ## Current Status
 
-Not started yet.
+- Main GitHub README updated
+- Lab 00 created
+- Hardware plan updated
+- Starting with Razer Blade + VMware only
+
+## Next Steps
+
+1. Prepare the Razer Blade
+2. Reduce Chrome memory usage before running VMs
+3. Create VM storage folder on D drive
+4. Download Ubuntu Server ISO
+5. Create Ubuntu Server VM in VMware
+6. Take first snapshot after clean installation
 
 ## Notes
 
 This lab is for defensive cybersecurity learning only.
 
 All testing will be done on owned devices and virtual machines.
+
+No real company data, private credentials, API keys, or unauthorized systems will be used.
