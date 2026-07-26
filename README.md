@@ -10,15 +10,68 @@ Logs → SIEM → Detection → Investigation → Enrichment → AI Summary → 
 
 This project is not just about installing tools. The main focus is understanding how alerts are generated, how analysts investigate them, how false positives are reduced, and how AI can support SOC work safely.
 
+## Build Strategy
+
+This lab will start simple and expand only when extra devices teach something useful.
+
+Rule:
+
+Use one device unless another device adds real learning value.
+
+The project will begin on the Razer Blade using VMware Workstation. Other physical devices will be added later only when needed.
+
+## Planned Lab Stages
+
+### Stage 0 — Razer Only
+
+Set up the basic lab environment on the Razer Blade.
+
+### Stage 1 — Razer + VMware VMs
+
+Create the first virtual lab:
+
+- Ubuntu Server VM
+- Windows VM
+- Kali Linux VM later
+
+First target:
+
+Razer Blade  
+→ VMware Workstation  
+→ Ubuntu Server VM  
+→ Windows VM  
+→ Wazuh Manager  
+→ Wazuh Agent  
+→ First file integrity monitoring alert
+
+### Stage 2 — Add ThinkPad as Physical Kali Machine
+
+Use the ThinkPad later as a real physical attacker/testing machine because it already has Kali Linux dual boot.
+
+### Stage 3 — Add Mini PC as Headless Server
+
+Use the mini PC later as an always-on Linux server, managed through SSH from the Razer.
+
+Possible future roles:
+
+- Wazuh server
+- Docker server
+- Storage box
+- Monitoring box
+
+### Stage 4 — Add Legion Only If Needed
+
+The Legion Y540 has HDD storage, so it will not be used as the main VM host for now. It may be used later for light testing, packet capture, or secondary lab tasks.
+
 ## Planned Modules
 
 ### 0. Base Lab Setup
 
-Set up the basic lab environment using virtual machines and physical devices.
+Set up the basic lab environment using VMware, virtual machines, snapshots, and basic networking.
 
 ### 1. Wazuh SIEM Hello World
 
-Install Wazuh, connect an endpoint, and test file integrity monitoring.
+Install Wazuh, connect a Windows endpoint, and test file integrity monitoring.
 
 ### 2. Identity Attack Detection Lab
 
@@ -56,19 +109,26 @@ Deploy a honeypot to collect attack attempts and visualize activity.
 
 Test local AI models for prompt injection, unsafe outputs, and data leakage risks.
 
+## Hardware Plan
+
+| Device | Use Now? | Planned Role |
+|---|---|---|
+| Razer Blade 15 Advanced 2022 | Yes | Main lab machine, VMware, VMs, coding, AI later |
+| Lenovo Legion Y540 | Not now | Optional later, HDD makes VMs slower |
+| ThinkPad T470s | Later | Physical Kali/Windows endpoint |
+| Mini PC | Later | Headless always-on Linux server |
+
 ## Current Status
 
-Project repository created.  
-First lab setup is in progress.
-
-## Hardware Available
-
-- Razer Blade 15 Advanced 2022
-- Lenovo Legion Y540 with GTX 1660 Ti and 16GB RAM
-- Lenovo ThinkCentre mini PC
-- ThinkPad T470s
+- GitHub repository created
+- README created
+- Lab planning in progress
+- Starting with Razer Blade + VMware only
 
 ## Notes
 
-This project is for defensive cybersecurity learning only.  
+This project is for defensive cybersecurity learning only.
+
 All testing will be done in a private lab environment using owned devices and virtual machines.
+
+No real company data, private credentials, API keys, or unauthorized systems will be used.
