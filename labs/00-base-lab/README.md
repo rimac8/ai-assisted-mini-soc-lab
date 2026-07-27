@@ -133,6 +133,55 @@ Clean Ubuntu Server - Updated + SSH Ready
 Purpose:
 
 This snapshot allows the lab to be safely restored before installing Wazuh or making major changes.
+### Wazuh SIEM Server Installed
+
+Installed Wazuh all-in-one on the Ubuntu SOC server.
+
+Server details:
+
+- VM name: Ubuntu-SOC-Server
+- Hostname: ubuntu-soc-server
+- OS: Ubuntu Server 24.04.4 LTS
+- IP address: 192.168.164.131
+- Role: Wazuh Manager, Dashboard, and Indexer
+- Dashboard URL: https://192.168.164.131
+- Dashboard login tested: Successful
+
+Important note:
+
+The Wazuh admin password is stored privately and is not included in this repository.
+
+### Windows Endpoint Agent Connected
+
+Created a clean Windows lab endpoint and installed the Wazuh Agent.
+
+Endpoint details:
+
+- VM name: Windows-Endpoint
+- Hostname: WIN-ENDPOINT
+- OS: Windows 11 Pro
+- IP address: 192.168.164.132
+- Username: labuser
+- Role: Wazuh Agent / Windows log source
+- Network mode: NAT
+- Internet test: Successful
+- Ping to Ubuntu SOC server: Successful
+- Wazuh Agent status: Active
+
+### Snapshots Created
+
+Ubuntu snapshot:
+
+Wazuh Manager - Agent Connected
+
+Windows snapshot:
+
+Wazuh Agent Installed - Connected
+
+Purpose:
+
+These snapshots allow the lab to be restored to a clean working SIEM state before starting detection tests.
+
 ## Notes
 
 This lab is for defensive cybersecurity learning only.
